@@ -8,6 +8,7 @@ function getNameFromCommandLine() {
 
 function getNameFromEnv() {
     // Write your code here
+    process.env.name="Yash";
     return process.env.name;
 }
 
@@ -16,9 +17,10 @@ function getNameFromReadLine() {
     const readline=require("readline");
 
     const r1=readline.createInterface({
-        input:stdin,
-        output:stdout
+        input:process.stdin,
+        output:process.stdout
     });
+    r1.question("Enter your name ",(ans)=>{console.log("entered name is ",ans)});
     r1.close();
 }
 
