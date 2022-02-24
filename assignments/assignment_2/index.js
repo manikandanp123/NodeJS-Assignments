@@ -1,10 +1,12 @@
 const http = require("http");
 const fs = require("fs");
+const path=require("path");
 
-fs.writeFile("index.html","<h1>Hello World</h1>",()=> console.log("File Created"));
+fs.writeFile("index.html","<h1>Hello World</h1>",(err)=> console.log(err));
 
 const server = http.createServer((req, res) => {
-    fs.readFile('./index.html', (err, data) => {
+    // fs.readFile('./index.html', (err, data) => {
+    fs.readFile(path.join(__dirname,"index.html"), (err, data) => {
         console.log("File readed");
         // res.write(data);
         res.end(data);
