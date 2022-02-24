@@ -1,0 +1,39 @@
+<!-- <h1>hello world</h1> -->
+<html>
+    <head>
+        <title>HTML CONTENT</title>
+        <!-- <style>
+            th{border: 1px solid black;margin: 5px;}
+            td{border: 1px solid black;margin: 5px;}
+        </style> -->
+    </head>
+    <body>
+        <div class="parent">
+            <div class="child">
+                <table border="2">
+                    <thead bgColor="yellow">
+                        <tr>
+                            <th>S.NO</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>City</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% users.forEach((user,idx)=>{ %>
+                        <tr>
+                            <td><%= user.number %> </td>
+                            <td><%= user.name %> </td>
+                            <td><%= user.age %> </td>
+                            <td><%= user.city %> </td>
+                            <td><%= user.email %> </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+                <a href="/form">Add user</a>
+            </div>
+        </div>
+    </body>
+</html>
