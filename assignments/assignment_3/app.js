@@ -12,7 +12,6 @@ var i=0;
 var users=[];
 for(var i=0;i<6;i++){
     users.push({
-        number:i,
         name:faker.name.findName(),
         age:26+i,
         city:faker.address.city(),
@@ -27,7 +26,7 @@ app.get("/form",(req,res)=>{
     res.render("form.ejs")
 })
 
-app.post("/add/user",(req,res)=>{
+app.post("/user/add",(req,res)=>{
     console.log(req.body);
     users.push({
         number:i,
@@ -40,4 +39,4 @@ app.post("/add/user",(req,res)=>{
     res.redirect('/');
 })
 
-app.listen(4000,()=>console.log("server at  4000"));
+app.listen(3000,()=>console.log("server at  3000"));
