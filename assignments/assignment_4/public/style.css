@@ -1,0 +1,28 @@
+.null{
+    background-color: yellow;
+}
+.true{
+    background-color: green;
+}
+
+.false{
+    background-color: red;
+}
+th,td{
+    font-size: 40;
+}
+.btn{
+    font-size: 40;
+    background-color: lightblue;
+    color: orangered;
+}
+.add{
+    text-align: center;
+    margin: 20px;
+}
+.user{
+    color: greenyellow;
+    background-color: black;
+    font-size: 40;
+
+}
