@@ -31,17 +31,17 @@ app.post("/user/add",async(req,res)=>{
 })
 
 app.put("/user/:id",async(req,res)=>{
-    if(req.body.select===null){
-        const updating=await users.updateOne({_id:req.params.id},{select:true});
+    if(req.body.isPromoted===null){
+        const updating=await users.updateOne({_id:req.params.id},{isPromoted:true});
     }
     else{
-        const updating=await users.updateOne({_id:req.params.id},{select:true});
+        const updating=await users.updateOne({_id:req.params.id},{isPromoted:true});
     }
     res.redirect("/");
 })
 
-app.put("/selected/:id",async(req,res)=>{
-    const updating=await users.updateOne({_id:req.params.id},{select:false});
+app.put("/isPromoteded/:id",async(req,res)=>{
+    const updating=await users.updateOne({_id:req.params.id},{isPromoted:false});
     res.redirect("/");
 })
 

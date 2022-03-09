@@ -10,13 +10,13 @@
                     <th>Name</th>
                     <th>Age</th>
                     <th>Email</th>
-                    <th>Selected/Unselected</th>
+                    <th>isPromoteded/Notpromoteded</th>
                     <th>Delete</th>
                 </thead>
                 <tbody>
 
                     <% user.forEach(user=> { %>
-                        <% if(user.select===null){ %>
+                        <% if(user.isPromoted===null){ %>
                             <tr class="null">
                                 <td><%= user.name %></td>
                                 <td><%= user.age %></td>
@@ -33,14 +33,14 @@
                                 </td>
                             </tr>
                         <% }%>
-                        <% if(user.select===true){ %>
+                        <% if(user.isPromoted===true){ %>
                             <tr class="true">
                                 <td><%= user.name %></td>
                                 <td><%= user.age %></td>
                                 <td><%= user.email %></td>
                                 <td>
-                                    <form action="/selected/<%= user._id %>?_method=PUT" method="post">
-                                        <button class="btn" type="submit">Selected</button>
+                                    <form action="/isPromoteded/<%= user._id %>?_method=PUT" method="post">
+                                        <button class="btn" type="submit">Promoteded</button>
                                     </form>
                                 </td>
                                 <td>
@@ -50,14 +50,14 @@
                                 </td>
                             </tr>
                         <% }%>
-                        <% if(user.select===false){ %>
+                        <% if(user.isPromoted===false){ %>
                             <tr class="false">
                                 <td><%= user.name %></td>
                                 <td><%= user.age %></td>
                                 <td><%= user.email %></td>
                                 <td>
                                     <form action="/user/<%= user._id %>?_method=PUT" method="post">
-                                        <button class="btn" type="submit">Unselected</button>
+                                        <button class="btn" type="submit">Notpromoteded</button>
                                     </form>
                                 </td>
                                 <td>

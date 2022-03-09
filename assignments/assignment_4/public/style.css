@@ -9,10 +9,10 @@
     background-color: red;
 }
 th,td{
-    font-size: 50;
+    font-size: 40;
 }
 .btn{
-    font-size: 50;
+    font-size: 40;
     background-color: lightblue;
     color: orangered;
 }
@@ -23,6 +23,6 @@ th,td{
 .user{
     color: greenyellow;
     background-color: black;
-    font-size: 50;
+    font-size: 40;
 
 }
