@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Home page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div>
+            <table border="2"cellspacing="5" cellpadding="5" >
+                <thead>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>isPromoteded/Notpromoteded</th>
+                    <th>Delete</th>
+                </thead>
+                <tbody>
+
+                    <% user.forEach(user=> { %>
+                        <% if(user.isPromoted===null){ %>
+                            <tr class="null">
+                                <td><%= user.name %></td>
+                                <td><%= user.age %></td>
+                                <td><%= user.email %></td>
+                                <td>
+                                    <form action="/user/<%= user._id %>?_method=PUT" method="post">
+                                        <button class="btn" type="submit">Null</button>
+                                    </form>
+                                </td>
+                                <td>
+                                <form action="/user/<%= user._id %>?_method=DELETE" method="post">
+                                    <button class="btn" type="submit">Delete</button>
+                                </form>
+                                </td>
+                            </tr>
+                        <% }%>
+                        <% if(user.isPromoted===true){ %>
+                            <tr class="true">
+                                <td><%= user.name %></td>
+                                <td><%= user.age %></td>
+                                <td><%= user.email %></td>
+                                <td>
+                                    <form action="/isPromoteded/<%= user._id %>?_method=PUT" method="post">
+                                        <button class="btn" type="submit">Promoteded</button>
+                                    </form>
+                                </td>
+                                <td>
+                                <form action="/user/<%= user._id %>?_method=DELETE" method="post">
+                                    <button class="btn" type="submit">Delete</button>
+                                </form>
+                                </td>
+                            </tr>
+                        <% }%>
+                        <% if(user.isPromoted===false){ %>
+                            <tr class="false">
+                                <td><%= user.name %></td>
+                                <td><%= user.age %></td>
+                                <td><%= user.email %></td>
+                                <td>
+                                    <form action="/user/<%= user._id %>?_method=PUT" method="post">
+                                        <button class="btn" type="submit">Notpromoteded</button>
+                                    </form>
+                                </td>
+                                <td>
+                                <form action="/user/<%= user._id %>?_method=DELETE" method="post">
+                                    <button  class="btn" type="submit">Delete</button>
+                                </form>
+                                </td>
+                            </tr>
+                        <% }%>
+                       
+                    <%  }) %>
+                    
+                </tbody>
+            </table>
+            <div class="add">
+            <a  href="/user/form"><button class="user" >Add user</button></a>
+            </div>
+        </div>
+    </body>
+</html>
